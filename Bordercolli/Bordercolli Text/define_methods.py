@@ -51,5 +51,5 @@ def choose_menu(NowTemp, menu):
         choice = menu[rand.randint(0,5)]
     else:
         choice = menu[rand.randint(5,9)]
-    print("브로콜리가 고른 오늘의 메뉴는...")
+    print("보더콜리가 고른 오늘의 메뉴는...")
     print(choice + " 어때?")
