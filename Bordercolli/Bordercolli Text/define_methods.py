@@ -10,7 +10,9 @@ def crawl():
     url = "https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B8%88%EC%B2%9C%EA%B5%AC%20%EB%82%A0%EC%94%A8"
     response = requests.get(url, verify = False)
     soup = BeautifulSoup(response.text, 'html.parser')
-    NowTemp = soup.find('span', {'class': 'todaytemp'}).text + soup.find('span', {'class' : 'tempmark'}).text[2:]
+    NowTemp = soup.find('span', {'class': 'max'}).text
+    tempmark = soup.find('span', {'class' : 'tempmark'}).text[2:]
+    print("오늘의 금천구 낮 최고기온은 " + NowTemp[:-1] + tempmark + "입니다.")
     return NowTemp
 
 def choose_mode(NowTemp, menu):
