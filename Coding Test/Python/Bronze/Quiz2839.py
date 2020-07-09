@@ -10,4 +10,7 @@ for i in range (n):
         if sum == n:
             ab.append(i+j)
 
-print(min(ab))
+if len(ab) ==0:
+    print(-1)
+else:
+    print(min(ab))
